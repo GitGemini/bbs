@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.henu.entity.Reply" table="t_reply">
+    <id name="rid" column="rid">
+      <generator class="native"></generator>
+    </id>    
+    <property name="content" column="content"></property> 
+    <property name="replyTime" column="replyTime"></property> 
+    
+    <many-to-one name="user" class="com.henu.entity.User"
+      column="urid"></many-to-one>
+      
+      <many-to-one name="post" class="com.henu.entity.Post"
+      column="prid"></many-to-one>   
+  </class>
+</hibernate-mapping>

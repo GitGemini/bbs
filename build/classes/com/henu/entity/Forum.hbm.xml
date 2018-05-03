@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.henu.entity.Forum" table="t_forum">
+    <id name="fid" column="fid">
+      <generator class="native"></generator>
+    </id>    
+    <property name="fname" column="fname"></property>    
+    <property name="info" column="info"></property> 
+    
+    <set name="topicSet" cascade="save-update,delete" lazy="false" inverse="true">
+      <key column="ftid"></key>
+      <one-to-many class="com.henu.entity.Topic" />
+    </set>  
+  </class>
+</hibernate-mapping>

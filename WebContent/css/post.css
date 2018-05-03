@@ -1,0 +1,45 @@
+#reply_content{
+  margin: 0 auto;
+  width: 1000px;
+}
+
+#post_div{
+	
+}
+
+.post_title{
+  background: #006699;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.li_left{
+	float: left;
+}
+
+.reply_div{
+    border:1px solid #A9CBEE;
+    min-height: 180px;
+    background: #EFF4FB;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.div_right{
+}
+
+.div_content{
+  text-wrap: normal;
+  white-space: pre-line;
+  padding: 10px 5px;
+  min-height: 150px;
+  background: #F5F5F5;
+  border-left:1px solid #A9CBEE;
+}
+.div_time{
+  padding: 5px;
+  border-top: 1px solid #A9CBEE;
+  border-left:1px solid #A9CBEE;
+}
+

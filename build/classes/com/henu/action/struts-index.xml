@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <package name="default" extends="struts-default" namespace="/">
+    <default-action-ref name="home" />
+    <action name="home" class="com.henu.action.IndexAction"
+      method="execute">
+      <result name="success">/index.jsp</result>
+    </action>
+    
+    <action name="summary" class="com.henu.action.IndexAction"
+      method="summary">
+      <result name="success">/jsp/summary.jsp</result>
+    </action>
+    
+    <action name="help" class="com.henu.action.IndexAction"
+      method="help">
+      <result name="success">/jsp/help.jsp</result>
+    </action>
+  </package>  
+</struts>

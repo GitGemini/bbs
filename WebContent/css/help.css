@@ -1,0 +1,25 @@
+.help_left {
+	float: left;
+	width: 20%;
+	border: solid 1px #ccc;
+}
+.help_left a:link, .help_left a:visited{
+	color: #333;
+}
+
+.help_left ul li{	
+    margin: 5px auro;
+}
+
+.help_left ul li{     
+	list-style: none;   
+	border-bottom: solid 1px #eee;
+    padding: 5px 0;
+}
+
+.help_right {
+	float: right;
+	width: 78%;
+	padding: 20px;
+	border: solid 1px #ccc;
+}

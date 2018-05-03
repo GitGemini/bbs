@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <package name="Topic" extends="struts-default" namespace="/topic">   
+    <action name="*" class="com.henu.action.TopicShowAction"
+      method="toTopic">
+      <result name="success">/jsp/topic.jsp</result>
+      <result name="error">/jsp/error.jsp</result>
+    </action>
+  </package>
+</struts>

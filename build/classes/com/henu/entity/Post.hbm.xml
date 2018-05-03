@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.henu.entity.Post" table="t_post">
+    <id name="pid" column="pid">
+      <generator class="native"></generator>
+    </id>    
+    <property name="title" column="title"></property>  
+    <property name="content" column="content"></property>  
+    <property name="createTime" column="createTime"></property>  
+    
+    <many-to-one name="topic" class="com.henu.entity.Topic"
+      column="tpid"></many-to-one>
+      
+    <many-to-one name="user" class="com.henu.entity.User"
+      column="upid"></many-to-one>
+      
+    <set name="replySet" cascade="save-update,delete" lazy="false" batch-size="10" inverse="true">
+      <key column="prid"></key>
+      <one-to-many class="com.henu.entity.Reply" />
+    </set>   
+  </class>
+</hibernate-mapping>

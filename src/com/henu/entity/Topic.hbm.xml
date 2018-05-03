@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.henu.entity.Topic" table="t_topic">
+    <id name="tid" column="tid">
+      <generator class="native"></generator>
+    </id>
+    <property name="tname" column="tname"></property>
+    <property name="info" column="info"></property>
+
+    <many-to-one name="froum" class="com.henu.entity.Forum"
+      column="ftid"></many-to-one>
+      
+      <!-- 配置lazy ： false
+                        表示不使用懒加载，这里是为了解决懒加载带来的异常
+          org.hibernate.LazyInitializationException
+       -->
+    <set name="postSet" cascade="save-update,delete" lazy="false" batch-size="10" inverse="true">
+      <key column="tpid"></key>
+      <one-to-many class="com.henu.entity.Post" />
+    </set> 
+
+  </class>
+</hibernate-mapping>

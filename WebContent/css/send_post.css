@@ -1,0 +1,45 @@
+.div_bar{
+	background: #006699;
+    color: #fff;
+	height:30px;
+	padding:3px 7px;	
+}
+#send_post_div{
+	width: 1000px;
+	margin:20px auto;
+	border:1px solid #A9CBEE;
+	background: #EFF4FB;
+
+}
+
+.div_right{
+	padding: 10px;
+  background: #F5F5F5;
+  text-align:left;
+}
+
+.div_left{
+	padding: 10px;
+	background: #EFF4FB;
+	text-align:right;
+}
+
+table tr td{
+	border:1px solid #A9CBEE;
+	collspacing:0;
+}
+
+.title-tip{
+	margin-top:15px;	
+}
+.title_text{
+	width: 75%;
+	resize:none;
+}
+.content_text {
+	width: 75%;
+	min-height: 180px;
+	padding: 10px 5px;
+	background: #FFF;
+	resize:none;
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body{
+	background: #EFF4FB;
+}
+.div-content{
+  border:1px solid #A9CBEE;
+}
+.div-left{
+	background:#fff;
+	border-right:1px solid #A9CBEE;
+	padding-bottom: 10px;	
+}
+.div-right{
+	background:#fff;
+}

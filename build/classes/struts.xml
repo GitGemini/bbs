@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <include file="com/henu/action/struts-index.xml"></include>
+  <include file="com/henu/action/struts-user.xml"></include>
+  <include file="com/henu/action/struts-topic.xml"></include>
+  <include file="com/henu/action/struts-post.xml"></include>
+  <include file="com/henu/action/struts-reply.xml"></include>
+</struts>

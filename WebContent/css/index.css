@@ -1,0 +1,42 @@
+/*
+#henu_img {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin:5px 10px 0 30px;
+}
+*/
+#myCarousel img{
+  margin: 0 auto;
+}
+
+#forum{
+  margin: 30px auto;
+  width: 1000px;
+}
+
+.forum_img{
+  margin: 5px;
+  float: left;
+  height: 40px;
+}
+
+.forum_title{
+  line-height: 50px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.forum_header{
+  height: 50px;
+  clear: both;
+}
+
+.div_forum{
+  width: 23%;
+  height: 120px;
+  float: left;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #aaa;
+}

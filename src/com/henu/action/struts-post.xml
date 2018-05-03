@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <package name="Post" extends="struts-default" namespace="/post">
+    <action name="*" class="com.henu.action.PostShowAction"
+      method="toPost">
+      <result name="success">/jsp/post.jsp</result>
+      <result name="error">/jsp/error.jsp</result>
+    </action>
+  </package>
+  <package name="PostManage" extends="struts-default" namespace="/post/manage">
+    <action name="add" class="com.henu.action.PostManageAction"
+      method="toAddPost">
+      <result name="success">/jsp/send_post.jsp</result>
+      <result name="error" type="redirectAction">
+        <param name="actionName">to_login</param>
+        <param name="namespace">/user</param>
+      </result>
+    </action>    
+
+    <action name="Add" class="com.henu.action.PostAction" method="addPost">
+      <result name="success" type="redirectAction">
+        <param name="actionName">home</param>
+        <param name="namespace">/</param>
+      </result>
+      <result name="error">/jsp/error.jsp</result>
+    </action>
+    
+    <action name="delete" class="com.henu.action.PostAction"
+      method="deletePost">
+      <result name="success" type="redirectAction">
+        <param name="actionName">${username}</param>
+        <param name="namespace">/me</param>
+      </result>
+      <result name="error">/jsp/error.jsp</result>
+    </action>
+  </package>
+</struts>

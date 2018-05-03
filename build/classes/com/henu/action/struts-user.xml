@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+  <package name="UserManager" extends="struts-default"
+    namespace="/user">
+    <action name="to_register" class="com.henu.action.UserShowAction"
+      method="toRegister">
+      <result name="success">/jsp/register.jsp</result>
+    </action>
+    <action name="to_login" class="com.henu.action.UserShowAction"
+      method="toLogin">
+      <result name="success">/jsp/login.jsp</result>
+    </action>
+    <action name="to_code" class="com.henu.action.UserShowAction"
+      method="toCode">
+      <result name="success">/servlet/checkCode</result>
+    </action>
+    <action name="to_pwd" class="com.henu.action.UserShowAction"
+      method="toPwd">
+      <result name="success">/jsp/user_pwd.jsp</result>
+      <result name="error">/jsp/login.jsp</result>
+    </action>
+    <action name="to_edit" class="com.henu.action.UserShowAction"
+      method="toEdit">
+      <result name="success">/jsp/user_edit.jsp</result>
+      <result name="error">/jsp/login.jsp</result>
+    </action>
+    <action name="to_head" class="com.henu.action.UserShowAction"
+      method="toHead">
+      <result name="success">/jsp/upload_head.jsp</result>
+      <result name="error">/jsp/login.jsp</result>
+    </action>
+
+    <!-- 注册 -->
+    <action name="register" class="com.henu.action.UserAction"
+      method="register">
+      <result name="success">/jsp/login.jsp</result>
+      <result name="error">/jsp/register.jsp</result>
+    </action>
+    <!-- 登录 -->
+    <action name="login" class="com.henu.action.UserAction"
+      method="login">
+      <result name="success" type="redirectAction">
+        <param name="actionName">home</param>
+        <param name="namespace">/</param>
+      </result>
+      <result name="error">/jsp/login.jsp</result>
+    </action>
+    <!-- 重置密码 -->
+    <action name="resetPwd" class="com.henu.action.UserAction"
+      method="resetPwd">
+      <result name="success">/jsp/login.jsp</result>
+      <result name="error">/jsp/user_pwd.jsp</result>      
+    </action>
+
+    <!-- 修改用户信息 -->
+    <action name="editUser" class="com.henu.action.UserAction"
+      method="Update">
+      <result name="success" type="redirectAction">
+        <param name="actionName">home</param>
+        <param name="namespace">/</param>
+      </result>
+      <result name="error">/jsp/login.jsp</result>
+    </action>
+    
+    <!-- 上传头像-->
+    <action name="uploadHead" class="com.henu.action.UploadHead"
+      method="uploadHead">
+      <result name="success" type="redirectAction">
+        <param name="actionName">home</param>
+        <param name="namespace">/</param>
+      </result>
+      <result name="error">/jsp/upload_head.jsp</result>
+    </action>
+
+    <!-- 用户退出 -->
+    <action name="exit" class="com.henu.action.UserAction"
+      method="exit">
+      <result name="success">/jsp/login.jsp</result>
+      <result name="success" type="redirectAction">
+        <param name="actionName">home</param>
+        <param name="namespace">/</param>
+      </result>
+    </action>
+  </package>
+
+  <package name="UserInfo" extends="struts-default" namespace="/me">
+    <action name="*" class="com.henu.action.ShowUserInfo"
+      method="showInfo">
+      <result name="success">/jsp/user.jsp</result>
+      <result name="error">/jsp/error.jsp</result>
+    </action>
+  </package>
+</struts>
