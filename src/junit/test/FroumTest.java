@@ -9,18 +9,42 @@ import com.henu.entity.Topic;
 import com.henu.utils.HibernateUtil;
 
 public class FroumTest {
+	
+	@Test
+	public void testAddFroum() {
+		Session session = HibernateUtil.openSession();
+		Transaction tx = session.beginTransaction();
+		try {
+			Forum froum = new Forum();
+			froum.setFname("Java技术");
+			froum.setInfo("讨论Java相关的技术");
+			
+			Forum f1 = new Forum();
+			f1.setFname("Web技术");
+			f1.setInfo("ASP.NET的技术");
+			
+			session.save(f1);
+			
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+		}finally {
+			session.close();
+		}
+	}
 
 	@Test
 	public void testAdd() {
 		Session session = HibernateUtil.openSession();
 		Transaction tx = session.beginTransaction();
 		try {
-			Forum froum = session.find(Forum.class, 1);
+			Forum froum = session.find(Forum.class, 2);
 			
 			
 			Topic t1 = new Topic();
-			t1.setTname("XML");
-			t1.setInfo("Web 开发 XML");
+			t1.setTname("JavaScript");
+			t1.setInfo("Web 开发JavaScript");
+			t1.setFroum(froum);
 			
 			froum.getTopicSet().add(t1);
 			
@@ -39,7 +63,7 @@ public class FroumTest {
 		Session session = HibernateUtil.openSession();
 		Transaction tx = session.beginTransaction();
 		try {
-			Forum froum = session.find(Forum.class, 2);
+			Forum froum = session.find(Forum.class, 1);
 			
 			Topic t3 = new Topic();
 			t3.setTname("J2ME");
